@@ -1,120 +1,103 @@
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+/* Hero Section */
+header {
+    background: #19d4c3;
+    padding: 20px 20px;
+    color: #fff;
+    text-align: left;
+}
 
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background-image: url('../assets/images/onatrack_background.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto;
+}
 
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.85) 100%);
-        }
-
-        /* Subtle track lines */
-        .track-lines {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            display: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            padding: 2rem;
-            max-width: 1200px;
-            margin-bottom: 12rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: #fff;
-            letter-spacing: -1px;
-        }
-
-        .hero h1 .highlight {
-            color: #22d3ee;
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            color: #b0b0b0;
-            margin-bottom: 2.5rem;
-            font-weight: 400;
-            line-height: 1.6;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: #22d3ee;
-            color: #000;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            letter-spacing: 0.3px;
-            margin: 0 8px;  /* top/bottom | left/right */
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(34, 211, 238, 0.6);
-            background: #06b6d4;
-        }
-
-
-@media (max-width: 768px) {
-  .hero {
-    height: 100vh;
-  }
-  
-  .hero-content {
-    margin-bottom: 10rem;
-    margin-top: 0;
+/* Witte Content container onder de header */
+.hero-section {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 19rem);
-  }
-  
-  .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.1;
-  }
-  
-  .hero p {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-  
-  .cta-button {
-    padding: 0.7rem 1.5rem;
-    font-size: 0.85rem;
-    margin: 0.25rem 0.5rem;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 16px;
+}
+
+/* Afbeelding links */
+.hero-image {
+    width: 45%;
+    max-width: 450px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Tekst rechts */
+.hero-content {
+    width: 50%;
+    text-align: left;
+    color: #1c1c1c;
+}
+
+.hero-content h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Benefits lijst */
+.benefits {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.benefits li::before {
+    content: •;
+    color: #0072c6;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* CTA button */
+.cta-button {
     display: inline-block;
-  }
-  
+    padding: 14px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    border: 2px solid #0072c6;
+    color: #0072c6;
+    background: transparent;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #0072c6;
+    color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image, .hero-content {
+        width: 100%;
+    }
+    .hero-content {
+        text-align: center;
+    }
 }
