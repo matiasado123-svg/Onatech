@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnaTech – IT/OT Integration & Open-Source</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+
+        .benefits {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .benefits li {
+            margin: 15px 0;
+            font-size: 1.1rem;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background: white;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .expertise-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .expertise-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        section:nth-child(even) .service-card {
+            background: #f8f9fa;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .application-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .application-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .application-card p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .advantages {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .advantages h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .advantages ul {
+            list-style: none;
+        }
+
+        .advantages li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .advantages li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .services-grid,
+            .applications-grid,
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Op zoek naar een eersteklas consultant?</h1>
+            <p class="tagline">Bedrijven versterken met Open-Source IT/OT-oplossingen</p>
+            <p class="hero-text">Wij helpen bedrijven hun operaties te optimaliseren met geavanceerde open-source technologieën, automatisering en datagedreven oplossingen.</p>
+            <ul class="benefits">
+                <li>Maximaliseer efficiëntie met slimme IT/OT-integraties</li>
+                <li>Verminder kosten door schaalbare en flexibele systemen</li>
+                <li>Beheer & analyseer data voor betere besluitvorming</li>
+            </ul>
+            <a href="#contact" class="cta-button">Ontdek hoe onze expertise jouw bedrijf kan helpen groeien!</a>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2>IT/OT consultancy in West- en Oost-Vlaanderen</h2>
+            <p class="subtitle">Bij OnaTech zijn we gespecialiseerd in open-source IT/OT-oplossingen, waarmee we bedrijven helpen optimaliseren, digitaliseren en opschalen zonder hoge licentiekosten.</p>
+            
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <h3>Beveiligde IT/OT-infrastructuur</h3>
+                </div>
+                <div class="expertise-item">
+                    <h3>Data-integratie & visualisatie</h3>
+                </div>
+                <div class="expertise-item">
+                    <h3>SCADA-ontwikkeling & automatisering</h3>
+                </div>
+                <div class="expertise-item">
+                    <h3>Maatwerk bedrijfsapplicaties</h3>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 40px; font-size: 1.2rem;">Op zoek naar een oplossing op maat? <a href="#contact" style="color: #667eea; font-weight: 600;">Contacteer ons!</a></p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Wat wij doen: IT/OT & SCADA-oplossingen</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>IT/OT-architectuur</h3>
+                    <p>Ontwerp van een veilige en schaalbare infrastructuur</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>Data integratie & visualisatie</h3>
+                    <p>Maak data zichtbaar en krachtig met Grafana, InfluxDB en meer</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <h3>Bedrijfsapplicaties op maat</h3>
+                    <p>Maatwerkapplicaties voor industriële en zakelijke automatisering</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <h3>ETL & Data Pipelines</h3>
+                    <p>Datatransformatie voor business intelligence</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <h3>SCADA ontwikkeling</h3>
+                    <p>Optimaliseer efficiëntie met automatisering en real-time monitoring</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">06</div>
+                    <h3>Hulp nodig bij het kiezen?</h3>
+                    <p>Samen kijken we naar de mogelijkheden!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Waar onze oplossingen worden toegepast</h2>
+            
+            <div class="applications-grid">
+                <div class="application-card">
+                    <h3>Procesoptimalisatie</h3>
+                    <p>Met geavanceerde data-analyse kunnen bedrijven inefficiënties detecteren, knelpunten verminderen en de algehele productieflow verbeteren.</p>
+                    <p>Door real-time monitoring te benutten, kunnen bedrijven weloverwogen beslissingen nemen om de productiviteit te verhogen en stilstand te minimaliseren.</p>
+                    
+                    <div class="advantages">
+                        <h4>Belangrijke voordelen</h4>
+                        <ul>
+                            <li>Volg en analyseer doorlooptijden voor betere planning</li>
+                            <li>Verminder stilstand door voorspellende planning</li>
+                            <li>Verhoog de efficiëntie van werkprocessen en het gebruik van middelen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h3>Productiecyclusanalyse</h3>
+                    <p>Het monitoren van doorlooptijden en cyclustijden helpt bedrijven bij het optimaliseren van processen en voorspellen van productieresultaten.</p>
+                    <p>Door historische gegevens te analyseren, kunnen bedrijven vertragingen voorspellen, de planning verbeteren en de algehele efficiëntie verhogen.</p>
+                    
+                    <div class="advantages">
+                        <h4>Belangrijke voordelen</h4>
+                        <ul>
+                            <li>Verbeter de efficiëntie van werkprocessen en het gebruik van middelen</li>
+                            <li>Volg en analyseer cyclustijden voor betere planning</li>
+                            <li>Verminder stilstand met voorspellende planning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h3>IT & Energiebeheer</h3>
+                    <p>Met real-time energiebeheer kunnen bedrijven inefficiënties opsporen, operationele kosten verlagen en ervoor zorgen dat machines optimaal presteren.</p>
+                    <p>We helpen industrieën bij het implementeren van geautomatiseerde dashboards voor continue energie-inzichten.</p>
+                    
+                    <div class="advantages">
+                        <h4>Belangrijke voordelen</h4>
+                        <ul>
+                            <li>Identificeer en elimineer verspilde energie om operationele kosten te verlagen</li>
+                            <li>Zorg ervoor dat apparatuur op optimale energieniveaus werkt om de levensduur te verlengen</li>
+                            <li>Ontvang direct meldingen wanneer het energieverbruik piekt</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <h3>AI & Computer Vision</h3>
+                    <p>Door AI-gestuurde computer vision te integreren, kunnen industrieën kwaliteitscontrole, defectdetectie en veiligheidsmonitoring automatiseren.</p>
+                    <p>Met beeldherkenning en machine learning kunnen bedrijven hogere nauwkeurigheid bereiken, menselijke fouten verminderen en de naleving van veiligheidsnormen verbeteren.</p>
+                    
+                    <div class="advantages">
+                        <h4>Belangrijke voordelen</h4>
+                        <ul>
+                            <li>Automatiseer defectdetectie in productieprocessen</li>
+                            <li>Verbeter kwaliteitscontrole met real-time beeldanalyse</li>
+                            <li>Verhoog de veiligheid op de werkplek met AI-gestuurde monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2025 OnaTech - IT/OT Integration & Open-Source</p>
+            <p style="margin-top: 10px;">Contact: <a href="https://onatech.be" style="color: #667eea;">onatech.be</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.service-card, .application-card, .expertise-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
