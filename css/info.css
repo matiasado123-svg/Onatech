@@ -1,30 +1,56 @@
-/* Witte Content container onder de header */
+/* Info Section */
 .info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1200px;
     margin: 60px auto;
-    padding: 40px;
-    background: #fff;
+    padding: 60px 40px;
+    background: #f8f9fa;
     border-radius: 16px;
 }
 
-.subtitle {
-    width: 50%;
-    text-align: left;
-    color: #1c1c1c;
-}
-
-.hero-content h2 {
-    font-size: 1.9rem;
+.info h2 {
+    font-size: 2.5rem;
     font-weight: 700;
+    color: #1c1c1c;
     margin-bottom: 20px;
+    padding-left: 20px;
 }
 
-.hero-content p {
+.subtitle {
     font-size: 1.1rem;
-    margin-bottom: 15px;
-    line-height: 1.5;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    padding-right: 1000px;
+}
+
+/* Expertise Grid - Simple List */
+.expertise-grid {
+    margin: 30px 0;
+}
+
+.expertise-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1c1c1c;
+    margin: 12px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.expertise-item h3::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #1c1c1c;
+    font-weight: bold;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .info h2 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
 }

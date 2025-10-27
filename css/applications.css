@@ -1,0 +1,120 @@
+/* Applications Section */
+.applications {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 60px 40px;
+}
+
+.applications h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1c1c1c;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+/* Applications Grid - 2 columns */
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.application-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.application-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1c1c1c;
+    margin-bottom: 20px;
+}
+
+.application-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.application-card p strong {
+    font-weight: 700;
+    color: #1c1c1c;
+}
+
+/* Advantages Section */
+.advantages {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.advantages h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1c1c1c;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.advantages h4::before {
+    content: '→';
+    color: #1c1c1c;
+    font-size: 1.2rem;
+}
+
+.advantages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.advantages li {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.advantages li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #1c1c1c;
+    font-weight: bold;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .applications-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .applications h2 {
+        font-size: 2rem;
+    }
+    
+    .application-card {
+        padding: 30px;
+    }
+    
+    .application-card h3 {
+        font-size: 1.4rem;
+    }
+}

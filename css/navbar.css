@@ -30,12 +30,10 @@
   height: 50px;
   width: auto;
   transition: transform 0.3s ease;
-  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.5));
 }
 
 .nav-logo img:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 0 15px rgba(34, 211, 238, 0.8));
 }
 
 .nav-logo-text {

@@ -10,7 +10,7 @@
 
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <div class="nav-container">
+    <div class="nav-container" id="navbar">
       <a href="#top" class="nav-logo">
         <img src="assets/images/Onatech_Logo.png" alt="OnaTrack Logo">
       </a>
@@ -20,8 +20,8 @@
         <span></span>
       </div>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about us">About us</a></li>
+        <li><a href="#navbar">Home</a></li>
+        <li><a href="#info">About us</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -189,12 +189,74 @@
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="container">
-            <p>&copy; 2025 OnaTech - IT/OT Integration & Open-Source</p>
-            <p style="margin-top: 10px;">Contact: <a href="https://onatech.be" style="color: #667eea;">onatech.be</a></p>
+  <main class="contact" aria-labelledby="contact-heading">
+
+    <section class="contact-info" aria-hidden="false">
+      <h1 id="contact-heading">Neem contact op</h1>
+      <p>Vul onderstaand formulier in en we nemen binnen 1 werkdag contact met je op. Of bel ons direct voor een snelle vraag.</p>
+
+      <div style="margin-top:18px;">
+        <small class="muted">Onze openingstijden: Ma–Vr 09:00–17:00</small>
+      </div>
+    </section>
+
+    <section>
+      <div id="msg-success" class="success" role="status" aria-live="polite">
+        Bedankt! Je bericht is ontvangen. We nemen zo snel mogelijk contact op.
+      </div>
+
+      <form id="contactForm" action="#" method="post" enctype="multipart/form-data" novalidate>
+        <!-- HONEYPOT to reduce spam -->
+        <div class="honeypot" aria-hidden="true">
+          <label for="website">Website</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
         </div>
-    </footer>
+
+        <div class="row">
+          <div class="col">
+            <label for="name">Naam <span aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" required maxlength="80" placeholder="Voor- en achternaam">
+          </div>
+
+          <div class="col">
+            <label for="company">Bedrijf</label>
+            <input id="company" name="company" type="text" maxlength="80" placeholder="Optioneel">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="email">E-mail <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" required maxlength="120" placeholder="naam@voorbeeld.nl">
+          </div>
+
+          <div class="col">
+            <label for="phone">Telefoon</label>
+            <input id="phone" name="phone" type="tel" pattern="^[0-9+\s()-]{6,30}$" maxlength="30" placeholder="+31 6 12 34 56 78">
+            <small class="muted">Alleen cijfers en + - ( ) toegestaan</small>
+          </div>
+        </div>
+
+        <div>
+          <label for="subject">Onderwerp</label>
+          <input id="subject" name="subject" type="text" maxlength="120" placeholder="Kort onderwerp">
+        </div>
+
+        <div>
+          <label for="message">Bericht <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" required maxlength="4000" placeholder="Schrijf hier je bericht..."></textarea>
+          <div class="errors" id="messageError" aria-live="polite"></div>
+        </div>
+
+
+        <div style="display:flex; align-items:center; gap:12px; margin-top:6px;">
+          <button type="submit" class="btn">Verstuur bericht</button>
+          <button type="reset" class="btn secondary">Formulier leegmaken</button>
+        </div>
+
+      </form>
+    </section>
+  </main>
 
     <script>
         // Smooth scrolling for anchor links
