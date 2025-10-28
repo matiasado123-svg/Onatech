@@ -233,3 +233,358 @@ document.querySelectorAll('.service-card, .application-card, .expertise-item').f
         */
     });
 })();
+
+// ===================================
+// ACCESSIBILITY ENHANCEMENTS
+// ===================================
+
+// Enhanced smooth scroll with focus management
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
+        if (target) {
+            // Smooth scroll
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Set focus to target for keyboard users
+            // Make it focusable temporarily if it's not already
+            const originalTabindex = target.getAttribute('tabindex');
+            if (!originalTabindex) {
+                target.setAttribute('tabindex', '-1');
+            }
+            
+            // Focus the target after scroll
+            setTimeout(() => {
+                target.focus();
+                
+                // Remove temporary tabindex after focus
+                if (!originalTabindex) {
+                    target.removeAttribute('tabindex');
+                }
+            }, 500);
+        }
+    });
+});
+
+
+if (hamburger) {
+    // Handle keyboard events (Enter and Space)
+hamburger.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleMenu();
+        }
+    });
+    
+    // Handle click events
+    hamburger.addEventListener('click', function() {
+        toggleMenu();
+    });
+    
+    function toggleMenu() {
+        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', !isExpanded);
+        
+        // Focus first menu item when opening
+        if (!isExpanded) {
+            setTimeout(() => {
+                const firstLink = navMenu.querySelector('a');
+                if (firstLink) firstLink.focus();
+            }, 300);
+        }
+    }
+    
+    // Close menu when clicking on a link
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        });
+    });
+    
+    // Close menu on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.focus();
+        }
+    });
+}
+
+// Trap focus within mobile menu when open
+if (navMenu) {
+    const getFocusableElements = () => {
+        return navMenu.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+    };
+    
+    document.addEventListener('keydown', function(e) {
+        if (!navMenu.classList.contains('active')) return;
+        if (e.key !== 'Tab') return;
+        
+        const focusableElements = getFocusableElements();
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        
+        if (e.shiftKey) { // Shift + Tab
+            if (document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+            }
+        } else { // Tab
+            if (document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
+        }
+    });
+}
+
+// Announce dynamic content changes to screen readers
+function announceToScreenReader(message, priority = 'polite') {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('role', 'status');
+    announcement.setAttribute('aria-live', priority);
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    
+    document.body.appendChild(announcement);
+    
+    setTimeout(() => {
+        document.body.removeChild(announcement);
+    }, 1000);
+}
+
+// Screen reader only class (add to CSS if not already present)
+const style = document.createElement('style');
+style.textContent = `
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+`;
+document.head.appendChild(style);
+
+// Enhanced cookie consent accessibility
+(function() {
+    const cookieBanner = document.getElementById('cookieConsent');
+    const acceptBtn = document.getElementById('acceptCookies');
+    const declineBtn = document.getElementById('declineCookies');
+    
+    if (cookieBanner) {
+        // When banner is shown, announce it to screen readers
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.target.classList.contains('show')) {
+                    announceToScreenReader('Cookie toestemming banner is verschenen', 'assertive');
+                    
+                    // Focus the accept button
+                    setTimeout(() => {
+                        if (acceptBtn) acceptBtn.focus();
+                    }, 400);
+                }
+            });
+        });
+        
+        observer.observe(cookieBanner, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
+    }
+    
+    // Announce cookie choice to screen reader
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+            announceToScreenReader('Cookies geaccepteerd');
+        });
+    }
+    
+    if (declineBtn) {
+        declineBtn.addEventListener('click', () => {
+            announceToScreenReader('Cookies geweigerd');
+        });
+    }
+})();
+
+// Form validation with better accessibility
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    // Add aria-invalid to inputs with errors
+    contactForm.addEventListener('submit', function(e) {
+        const requiredFields = contactForm.querySelectorAll('[required]');
+        let hasErrors = false;
+        
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                field.setAttribute('aria-invalid', 'true');
+                hasErrors = true;
+            } else {
+                field.setAttribute('aria-invalid', 'false');
+            }
+        });
+        
+        // Email validation
+        const emailField = contactForm.querySelector('#email');
+        if (emailField && emailField.value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailField.value)) {
+                emailField.setAttribute('aria-invalid', 'true');
+                hasErrors = true;
+            }
+        }
+        
+        if (hasErrors) {
+            announceToScreenReader('Formulier bevat fouten. Controleer de gemarkeerde velden.', 'assertive');
+        }
+    });
+    
+    // Remove aria-invalid when user starts typing
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            if (this.hasAttribute('aria-invalid')) {
+                this.setAttribute('aria-invalid', 'false');
+            }
+        });
+    });
+}
+
+// Announce success message
+const msgSuccess = document.getElementById('msg-success');
+if (msgSuccess) {
+    const successObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.target.style.display === 'block') {
+                announceToScreenReader('Formulier succesvol verzonden', 'assertive');
+            }
+        });
+    });
+    
+    successObserver.observe(msgSuccess, {
+        attributes: true,
+        attributeFilter: ['style']
+    });
+}
+
+// Improve card keyboard navigation
+document.querySelectorAll('.service-card, .application-card').forEach(card => {
+    // Make cards keyboard focusable if they contain interactive content
+    const links = card.querySelectorAll('a');
+    if (links.length === 0) {
+        card.setAttribute('tabindex', '0');
+    }
+});
+
+// Add keyboard support for logo (return to top)
+const navLogo = document.querySelector('.nav-logo');
+if (navLogo) {
+    navLogo.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    });
+}
+
+console.log('✓ Accessibility enhancements loaded');
+
+
+// ===================================
+// FAQ ACCORDION FUNCTIONALITY
+// ===================================
+
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        toggleFAQ(question);
+    });
+    
+    // Keyboard support
+    question.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleFAQ(question);
+        }
+    });
+});
+
+function toggleFAQ(question) {
+    const faqItem = question.parentElement;
+    const answer = question.nextElementSibling;
+    const isExpanded = question.getAttribute('aria-expanded') === 'true';
+    
+    // Close all other FAQ items
+    faqQuestions.forEach(q => {
+        if (q !== question) {
+            q.setAttribute('aria-expanded', 'false');
+            q.parentElement.classList.remove('active');
+            const a = q.nextElementSibling;
+            a.setAttribute('hidden', '');
+        }
+    });
+    
+    // Toggle current item
+    if (isExpanded) {
+        question.setAttribute('aria-expanded', 'false');
+        faqItem.classList.remove('active');
+        answer.setAttribute('hidden', '');
+    } else {
+        question.setAttribute('aria-expanded', 'true');
+        faqItem.classList.add('active');
+        answer.removeAttribute('hidden');
+        
+        // Announce to screen readers
+        announceToScreenReader('Vraag uitgevouwen');
+    }
+}
+
+console.log('✓ FAQ accordion loaded');
+
+// ===================================
+// NATIVE LAZY LOADING FALLBACK
+// ===================================
+
+// For browsers that don't support native lazy loading
+if ('loading' in HTMLImageElement.prototype) {
+    console.log('✓ Native lazy loading supported');
+} else {
+    console.log('⚠ Loading lazy loading polyfill');
+    
+    // Simple Intersection Observer fallback
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src || img.src;
+                img.classList.add('loaded');
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    lazyImages.forEach(img => imageObserver.observe(img));
+}

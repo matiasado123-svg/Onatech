@@ -1,0 +1,117 @@
+/* ===================================
+   ACCESSIBILITY IMPROVEMENTS
+   =================================== */
+
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0ea5e9;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 10000;
+    border-radius: 0 0 8px 0;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Enhanced focus states for keyboard navigation */
+*:focus {
+    outline: 3px solid #22d3ee;
+    outline-offset: 2px;
+}
+
+/* Only show focus for keyboard navigation (not mouse clicks) */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: 2px;
+}
+
+/* High contrast focus for interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px rgba(34, 211, 238, 0.2);
+}
+
+/* Enhanced focus for navigation items */
+.nav-menu li a:focus-visible {
+    background: rgba(34, 211, 238, 0.15);
+    color: #0ea5e9;
+}
+
+/* Enhanced focus for cards */
+.service-card:focus-within,
+.application-card:focus-within,
+.expertise-item:focus-within {
+    outline: 3px solid #22d3ee;
+    outline-offset: 4px;
+}
+
+/* Hamburger menu accessibility */
+.hamburger:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* Cookie consent buttons focus */
+.cookie-btn:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Social links focus */
+.social-links a:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: 4px;
+}
+
+/* Make sure focus is visible on CTA buttons */
+.cta-button:focus-visible,
+.header-cta:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: 4px;
+}
+
+/* Improve logo focus state */
+.nav-logo:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    *:focus-visible {
+        outline-width: 4px;
+        outline-offset: 3px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
