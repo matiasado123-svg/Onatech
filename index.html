@@ -4,9 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OnaTech – IT/OT Integration & Open-Source</title>
+    <meta name="description" content="OnaTech is gespecialiseerd in open-source IT/OT-oplossingen in West- en Oost-Vlaanderen. Wij helpen bedrijven optimaliseren met SCADA-ontwikkeling, data-integratie en maatwerk applicaties.">
+    <meta name="keywords" content="IT/OT integratie, SCADA ontwikkeling, open-source oplossingen, data-integratie, automatisering, Vlaanderen">
+    <meta name="author" content="OnaTech">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onatech.be/">
+    <meta property="og:title" content="OnaTech – IT/OT Integration & Open-Source">
+    <meta property="og:description" content="Bedrijven versterken met Open-Source IT/OT-oplossingen. Specialisten in SCADA, data-integratie en automatisering.">
+    <meta property="og:image" content="https://onatech.be/assets/images/Onatech_Logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://onatech.be/">
+    <meta property="twitter:title" content="OnaTech – IT/OT Integration & Open-Source">
+    <meta property="twitter:description" content="Bedrijven versterken met Open-Source IT/OT-oplossingen. Specialisten in SCADA, data-integratie en automatisering.">
+    <meta property="twitter:image" content="https://onatech.be/assets/images/Onatech_Logo.png">
+    
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/Onatech_Logo.png">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX'); // Replace with your actual Google Analytics ID
+    </script>
 </head>
-<body>
+<body class="loading">
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-content">
+      <p>🍪 Wij gebruiken cookies om uw ervaring te verbeteren en om onze website te analyseren. Door verder te gaan, gaat u akkoord met ons gebruik van cookies.</p>
+      <div class="cookie-buttons">
+        <button id="acceptCookies" class="cookie-btn accept">Accepteren</button>
+        <button id="declineCookies" class="cookie-btn decline">Weigeren</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Navigation Bar -->
   <nav class="navbar">
@@ -20,7 +61,7 @@
         <span></span>
       </div>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#navbar">Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#info">About us</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -28,10 +69,14 @@
     </div>
   </nav>
 
-<header> <div class="header"> <h1>Op zoek naar een eersteklas consultant?</h1></header>
+  <header>
+    <div class="header" id="home">
+      <h1>Op zoek naar een eersteklas consultant?</h1>
+      <a href="#contact" class="header-cta">Contact opnemen</a>
+    </div>
+  </header>
 
-
-<section class="hero-section">
+  <section class="hero-section">
     <div class="hero-image">
         <img src="assets/images/Onatech_Afbeelding1.png" alt="Industrie">
     </div>
@@ -49,252 +94,251 @@
         <p>Ontdek hoe onze expertise jouw bedrijf kan helpen groeien!</p>
         <a href="#contact" class="cta-button">Meer weten?</a>
     </div>
-</section>
+  </section>
 
-
-    <section>
-        <div class="info">
-            <h2>IT/OT consultancy in West- en Oost-Vlaanderen</h2>
-            <p class="subtitle">Bij OnaTech zijn we gespecialiseerd in open-source IT/OT-oplossingen, waarmee we bedrijven helpen optimaliseren, digitaliseren en opschalen zonder hoge licentiekosten.</p>
-            
-            <div class="expertise-grid">
-                <div class="expertise-item">
-                    <h3>Beveiligde IT/OT-infrastructuur</h3>
-                </div>
-                <div class="expertise-item">
-                    <h3>Data-integratie & visualisatie</h3>
-                </div>
-                <div class="expertise-item">
-                    <h3>SCADA-ontwikkeling & automatisering</h3>
-                </div>
-                <div class="expertise-item">
-                    <h3>Maatwerk bedrijfsapplicaties</h3>
-                </div>
+  <section id="info">
+    <div class="info">
+        <h2>IT/OT consultancy in West- en Oost-Vlaanderen</h2>
+        <p class="subtitle">Bij OnaTech zijn we gespecialiseerd in open-source IT/OT-oplossingen, waarmee we bedrijven helpen optimaliseren, digitaliseren en opschalen zonder hoge licentiekosten.</p>
+        
+        <div class="expertise-grid">
+            <div class="expertise-item">
+                <h3>Beveiligde IT/OT-infrastructuur</h3>
             </div>
-            
-            <p style="text-align: center; margin-top: 40px; font-size: 1.2rem;">Op zoek naar een oplossing op maat? <a href="#contact" style="color: #667eea; font-weight: 600;">Contacteer ons!</a></p>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="solutions">
-            <h2>Wat wij doen: IT/OT & SCADA-oplossingen</h2>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-number">01</div>
-                    <h3>IT/OT-architectuur</h3>
-                    <p>Ontwerp van een veilige en schaalbare infrastructuur</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">02</div>
-                    <h3>Data integratie & visualisatie</h3>
-                    <p>Maak data zichtbaar en krachtig met Grafana, InfluxDB en meer</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">03</div>
-                    <h3>Bedrijfsapplicaties op maat</h3>
-                    <p>Maatwerkapplicaties voor industriële en zakelijke automatisering</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">04</div>
-                    <h3>ETL & Data Pipelines</h3>
-                    <p>Datatransformatie voor business intelligence</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">05</div>
-                    <h3>SCADA ontwikkeling</h3>
-                    <p>Optimaliseer efficiëntie met automatisering en real-time monitoring</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">06</div>
-                    <h3>Hulp nodig bij het kiezen?</h3>
-                    <p>Samen kijken we naar de mogelijkheden!</p>
-                </div>
+            <div class="expertise-item">
+                <h3>Data-integratie & visualisatie</h3>
+            </div>
+            <div class="expertise-item">
+                <h3>SCADA-ontwikkeling & automatisering</h3>
+            </div>
+            <div class="expertise-item">
+                <h3>Maatwerk bedrijfsapplicaties</h3>
             </div>
         </div>
-    </section>
+        
+        <p style="text-align: center; margin-top: 40px; font-size: 1.2rem;">Op zoek naar een oplossing op maat? <a href="#contact" style="color: #0ea5e9; font-weight: 600;">Contacteer ons!</a></p>
+    </div>
+  </section>
 
-    <section>
-        <div class="applications">
-            <h2>Waar onze oplossingen worden toegepast</h2>
+  <section id="services">
+    <div class="solutions">
+        <h2>Wat wij doen: IT/OT & SCADA-oplossingen</h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-number">01</div>
+                <h3>IT/OT-architectuur</h3>
+                <p>Ontwerp van een veilige en schaalbare infrastructuur</p>
+            </div>
             
-            <div class="applications-grid">
-                <div class="application-card">
-                    <h3>Procesoptimalisatie</h3>
-                    <p>Met geavanceerde data-analyse kunnen bedrijven inefficiënties detecteren, knelpunten verminderen en de algehele productieflow verbeteren.</p>
-                    <p>Door real-time monitoring te benutten, kunnen bedrijven weloverwogen beslissingen nemen om de productiviteit te verhogen en stilstand te minimaliseren.</p>
-                    
-                    <div class="advantages">
-                        <h4>Belangrijke voordelen</h4>
-                        <ul>
-                            <li>Volg en analyseer doorlooptijden voor betere planning</li>
-                            <li>Verminder stilstand door voorspellende planning</li>
-                            <li>Verhoog de efficiëntie van werkprocessen en het gebruik van middelen</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="service-card">
+                <div class="service-number">02</div>
+                <h3>Data integratie & visualisatie</h3>
+                <p>Maak data zichtbaar en krachtig met Grafana, InfluxDB en meer</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-number">03</div>
+                <h3>Bedrijfsapplicaties op maat</h3>
+                <p>Maatwerkapplicaties voor industriële en zakelijke automatisering</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-number">04</div>
+                <h3>ETL & Data Pipelines</h3>
+                <p>Datatransformatie voor business intelligence</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-number">05</div>
+                <h3>SCADA ontwikkeling</h3>
+                <p>Optimaliseer efficiëntie met automatisering en real-time monitoring</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-number">06</div>
+                <h3>Hulp nodig bij het kiezen?</h3>
+                <p>Samen kijken we naar de mogelijkheden!</p>
+            </div>
+        </div>
+    </div>
+  </section>
 
-                <div class="application-card">
-                    <h3>Productiecyclusanalyse</h3>
-                    <p>Het monitoren van doorlooptijden en cyclustijden helpt bedrijven bij het optimaliseren van processen en voorspellen van productieresultaten.</p>
-                    <p>Door historische gegevens te analyseren, kunnen bedrijven vertragingen voorspellen, de planning verbeteren en de algehele efficiëntie verhogen.</p>
-                    
-                    <div class="advantages">
-                        <h4>Belangrijke voordelen</h4>
-                        <ul>
-                            <li>Verbeter de efficiëntie van werkprocessen en het gebruik van middelen</li>
-                            <li>Volg en analyseer cyclustijden voor betere planning</li>
-                            <li>Verminder stilstand met voorspellende planning</li>
-                        </ul>
-                    </div>
+  <section>
+    <div class="applications">
+        <h2>Waar onze oplossingen worden toegepast</h2>
+        
+        <div class="applications-grid">
+            <div class="application-card">
+                <h3>Procesoptimalisatie</h3>
+                <p>Met geavanceerde data-analyse kunnen bedrijven inefficiënties detecteren, knelpunten verminderen en de algehele productieflow verbeteren.</p>
+                <p>Door real-time monitoring te benutten, kunnen bedrijven weloverwogen beslissingen nemen om de productiviteit te verhogen en stilstand te minimaliseren.</p>
+                
+                <div class="advantages">
+                    <h4>Belangrijke voordelen</h4>
+                    <ul>
+                        <li>Volg en analyseer doorlooptijden voor betere planning</li>
+                        <li>Verminder stilstand door voorspellende planning</li>
+                        <li>Verhoog de efficiëntie van werkprocessen en het gebruik van middelen</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="application-card">
-                    <h3>IT & Energiebeheer</h3>
-                    <p>Met real-time energiebeheer kunnen bedrijven inefficiënties opsporen, operationele kosten verlagen en ervoor zorgen dat machines optimaal presteren.</p>
-                    <p>We helpen industrieën bij het implementeren van geautomatiseerde dashboards voor continue energie-inzichten.</p>
-                    
-                    <div class="advantages">
-                        <h4>Belangrijke voordelen</h4>
-                        <ul>
-                            <li>Identificeer en elimineer verspilde energie om operationele kosten te verlagen</li>
-                            <li>Zorg ervoor dat apparatuur op optimale energieniveaus werkt om de levensduur te verlengen</li>
-                            <li>Ontvang direct meldingen wanneer het energieverbruik piekt</li>
-                        </ul>
-                    </div>
+            <div class="application-card">
+                <h3>Productiecyclusanalyse</h3>
+                <p>Het monitoren van doorlooptijden en cyclustijden helpt bedrijven bij het optimaliseren van processen en voorspellen van productieresultaten.</p>
+                <p>Door historische gegevens te analyseren, kunnen bedrijven vertragingen voorspellen, de planning verbeteren en de algehele efficiëntie verhogen.</p>
+                
+                <div class="advantages">
+                    <h4>Belangrijke voordelen</h4>
+                    <ul>
+                        <li>Verbeter de efficiëntie van werkprocessen en het gebruik van middelen</li>
+                        <li>Volg en analyseer cyclustijden voor betere planning</li>
+                        <li>Verminder stilstand met voorspellende planning</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="application-card">
-                    <h3>AI & Computer Vision</h3>
-                    <p>Door AI-gestuurde computer vision te integreren, kunnen industrieën kwaliteitscontrole, defectdetectie en veiligheidsmonitoring automatiseren.</p>
-                    <p>Met beeldherkenning en machine learning kunnen bedrijven hogere nauwkeurigheid bereiken, menselijke fouten verminderen en de naleving van veiligheidsnormen verbeteren.</p>
-                    
-                    <div class="advantages">
-                        <h4>Belangrijke voordelen</h4>
-                        <ul>
-                            <li>Automatiseer defectdetectie in productieprocessen</li>
-                            <li>Verbeter kwaliteitscontrole met real-time beeldanalyse</li>
-                            <li>Verhoog de veiligheid op de werkplek met AI-gestuurde monitoring</li>
-                        </ul>
-                    </div>
+            <div class="application-card">
+                <h3>IT & Energiebeheer</h3>
+                <p>Met real-time energiebeheer kunnen bedrijven inefficiënties opsporen, operationele kosten verlagen en ervoor zorgen dat machines optimaal presteren.</p>
+                <p>We helpen industrieën bij het implementeren van geautomatiseerde dashboards voor continue energie-inzichten.</p>
+                
+                <div class="advantages">
+                    <h4>Belangrijke voordelen</h4>
+                    <ul>
+                        <li>Identificeer en elimineer verspilde energie om operationele kosten te verlagen</li>
+                        <li>Zorg ervoor dat apparatuur op optimale energieniveaus werkt om de levensduur te verlengen</li>
+                        <li>Ontvang direct meldingen wanneer het energieverbruik piekt</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="application-card">
+                <h3>AI & Computer Vision</h3>
+                <p>Door AI-gestuurde computer vision te integreren, kunnen industrieën kwaliteitscontrole, defectdetectie en veiligheidsmonitoring automatiseren.</p>
+                <p>Met beeldherkenning en machine learning kunnen bedrijven hogere nauwkeurigheid bereiken, menselijke fouten verminderen en de naleving van veiligheidsnormen verbeteren.</p>
+                
+                <div class="advantages">
+                    <h4>Belangrijke voordelen</h4>
+                    <ul>
+                        <li>Automatiseer defectdetectie in productieprocessen</li>
+                        <li>Verbeter kwaliteitscontrole met real-time beeldanalyse</li>
+                        <li>Verhoog de veiligheid op de werkplek met AI-gestuurde monitoring</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+  </section>
 
-  <main class="contact" aria-labelledby="contact-heading">
-
-    <section class="contact-info" aria-hidden="false">
-      <h1 id="contact-heading">Neem contact op</h1>
-      <p>Vul onderstaand formulier in en we nemen binnen 1 werkdag contact met je op. Of bel ons direct voor een snelle vraag.</p>
-
-      <div style="margin-top:18px;">
-        <small class="muted">Onze openingstijden: Ma–Vr 09:00–17:00</small>
-      </div>
-    </section>
-
-    <section>
-      <div id="msg-success" class="success" role="status" aria-live="polite">
-        Bedankt! Je bericht is ontvangen. We nemen zo snel mogelijk contact op.
+  <section class="contact-section" id="contact">
+    <h2>Neem contact op</h2>
+    
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Laten we samenwerken</h3>
+        <p>Vul onderstaand formulier in en we nemen binnen 1 werkdag contact met je op. Of bel ons direct voor een snelle vraag.</p>
+        <p><strong>Openingstijden:</strong> Ma–Vr 09:00–17:00</p>
       </div>
 
-      <form id="contactForm" action="#" method="post" enctype="multipart/form-data" novalidate>
-        <!-- HONEYPOT to reduce spam -->
-        <div class="honeypot" aria-hidden="true">
-          <label for="website">Website</label>
-          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      <div class="contact-form">
+        <div id="msg-success" class="success" role="status" aria-live="polite">
+          Bedankt! Je bericht is ontvangen. We nemen zo snel mogelijk contact op.
         </div>
 
-        <div class="row">
-          <div class="col">
-            <label for="name">Naam <span aria-hidden="true">*</span></label>
-            <input id="name" name="name" type="text" required maxlength="80" placeholder="Voor- en achternaam">
+        <form id="contactForm" action="#" method="post" enctype="multipart/form-data" novalidate>
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
           </div>
 
-          <div class="col">
-            <label for="company">Bedrijf</label>
-            <input id="company" name="company" type="text" maxlength="80" placeholder="Optioneel">
+          <div class="row">
+            <div class="col">
+              <label for="name">Naam <span aria-hidden="true">*</span></label>
+              <input id="name" name="name" type="text" required maxlength="80" placeholder="Voor- en achternaam">
+            </div>
+
+            <div class="col">
+              <label for="company">Bedrijf</label>
+              <input id="company" name="company" type="text" maxlength="80" placeholder="Optioneel">
+            </div>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col">
-            <label for="email">E-mail <span aria-hidden="true">*</span></label>
-            <input id="email" name="email" type="email" required maxlength="120" placeholder="naam@voorbeeld.nl">
+          <div class="row">
+            <div class="col">
+              <label for="email">E-mail <span aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" required maxlength="120" placeholder="naam@voorbeeld.nl">
+            </div>
+
+            <div class="col">
+              <label for="phone">Telefoon</label>
+              <input id="phone" name="phone" type="tel" pattern="^[0-9+\s()-]{6,30}$" maxlength="30" placeholder="+32 123 45 67 89">
+              <small class="muted">Alleen cijfers en + - ( ) toegestaan</small>
+            </div>
           </div>
 
-          <div class="col">
-            <label for="phone">Telefoon</label>
-            <input id="phone" name="phone" type="tel" pattern="^[0-9+\s()-]{6,30}$" maxlength="30" placeholder="+31 6 12 34 56 78">
-            <small class="muted">Alleen cijfers en + - ( ) toegestaan</small>
+          <div>
+            <label for="subject">Onderwerp</label>
+            <input id="subject" name="subject" type="text" maxlength="120" placeholder="Kort onderwerp">
           </div>
+
+          <div>
+            <label for="message">Bericht <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" required maxlength="4000" placeholder="Schrijf hier je bericht..."></textarea>
+          </div>
+
+          <div class="controls">
+            <button type="submit" class="btn">Verstuur bericht</button>
+            <button type="reset" class="btn secondary">Formulier leegmaken</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><strong>Bedrijf:</strong> OnaTech BV</p>
+        <p><strong>Adres:</strong> Mesenstraat 86, 8940 Wervik, België</p>
+        <p><strong>BTW:</strong> BE1023047122</p>
+        <p><strong>Email:</strong> info@onatech.be</p>
+      </div>
+
+      <div class="footer-social">
+        <h4>Volg ons</h4>
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+            </svg>
+          </a>
         </div>
+      </div>
+    </div>
 
-        <div>
-          <label for="subject">Onderwerp</label>
-          <input id="subject" name="subject" type="text" maxlength="120" placeholder="Kort onderwerp">
-        </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 OnaTech. Alle rechten voorbehouden. | IT/OT Integration & Open-Source Solutions</p>
+    </div>
+  </footer>
 
-        <div>
-          <label for="message">Bericht <span aria-hidden="true">*</span></label>
-          <textarea id="message" name="message" required maxlength="4000" placeholder="Schrijf hier je bericht..."></textarea>
-          <div class="errors" id="messageError" aria-live="polite"></div>
-        </div>
-
-
-        <div style="display:flex; align-items:center; gap:12px; margin-top:6px;">
-          <button type="submit" class="btn">Verstuur bericht</button>
-          <button type="reset" class="btn secondary">Formulier leegmaken</button>
-        </div>
-
-      </form>
-    </section>
-  </main>
-
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards
-        document.querySelectorAll('.service-card, .application-card, .expertise-item').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-    </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
