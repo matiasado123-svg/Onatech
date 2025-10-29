@@ -183,7 +183,7 @@ document.querySelectorAll('.service-card, .application-card, .expertise-item').f
 });
 
 // ===================================
-// FAQ ACCORDION - FIXED
+// FAQ ACCORDION - FIXED VERSION
 // ===================================
 (function() {
     const faqQuestions = document.querySelectorAll('.faq-question');
@@ -198,7 +198,7 @@ document.querySelectorAll('.service-card, .application-card, .expertise-item').f
         const answer = question.nextElementSibling;
         const isExpanded = question.getAttribute('aria-expanded') === 'true';
         
-        // Close all other FAQ items
+        // Close all other FAQ items first
         faqQuestions.forEach(q => {
             if (q !== question) {
                 const otherItem = q.parentElement;
@@ -207,34 +207,46 @@ document.querySelectorAll('.service-card, .application-card, .expertise-item').f
                 q.setAttribute('aria-expanded', 'false');
                 otherItem.classList.remove('active');
                 if (otherAnswer) {
+                    otherAnswer.setAttribute('hidden', '');
                     otherAnswer.style.maxHeight = '0';
-                    otherAnswer.style.paddingTop = '0';
-                    otherAnswer.style.paddingBottom = '0';
                 }
             }
         });
         
         // Toggle current item
         if (isExpanded) {
+            // Close this item
             question.setAttribute('aria-expanded', 'false');
             faqItem.classList.remove('active');
             if (answer) {
                 answer.style.maxHeight = '0';
-                answer.style.paddingTop = '0';
-                answer.style.paddingBottom = '0';
+                // Wait for animation to complete before adding hidden
+                setTimeout(() => {
+                    answer.setAttribute('hidden', '');
+                }, 400);
             }
         } else {
+            // Open this item
             question.setAttribute('aria-expanded', 'true');
             faqItem.classList.add('active');
             if (answer) {
+                answer.removeAttribute('hidden');
+                // Force reflow to ensure transition works
+                answer.offsetHeight;
+                // Set maxHeight to scrollHeight for smooth animation
                 answer.style.maxHeight = answer.scrollHeight + 'px';
-                answer.style.paddingTop = '0';
-                answer.style.paddingBottom = '24px';
             }
         }
     }
 
+    // Initialize all answers as closed
     faqQuestions.forEach(question => {
+        const answer = question.nextElementSibling;
+        if (answer) {
+            answer.setAttribute('hidden', '');
+            answer.style.maxHeight = '0';
+        }
+        
         // Click handler
         question.addEventListener('click', function(e) {
             e.preventDefault();
