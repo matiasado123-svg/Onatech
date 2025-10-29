@@ -1,15 +1,12 @@
 /* Testimonials Section */
 .testimonials-section {
-    width: 100vw;
     background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
     padding: 80px 0;
-    margin: 0;
 }
 
 .testimonials {
     max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     padding: 0 40px;
 }
 
@@ -118,12 +115,11 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .testimonials-section {
-        padding: 40px 20px;
+        padding: 60px 0;
     }
 
     .testimonials {
-        flex-direction: column;
-        padding: 30px 20px;
+        padding: 0 20px;
     }
 
     .testimonials h2 {

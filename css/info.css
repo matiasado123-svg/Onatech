@@ -1,9 +1,10 @@
 /* Info Section */
 .info {
-    width: 100vw;
-    padding: 80px 0;
+    margin: 60px auto;
+    padding: 80px 60px;
     background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-    margin: 0;
+    border-radius: 24px;
+    max-width: 1400px;
 }
 
 .info h2 {
@@ -26,12 +27,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-}
-
-.info > p {
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .expertise-item h3 {
@@ -88,8 +83,8 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .info {
-        flex-direction: column;
-        padding: 30px 20px;
+        margin: 40px 10px;
+        padding: 40px 20px;
     }
 
     .info h2 {

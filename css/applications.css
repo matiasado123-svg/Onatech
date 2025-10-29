@@ -1,9 +1,10 @@
 /* Applications Section */
 .applications {
-    width: 100vw;
-    padding: 60px 0;
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 60px 40px;
     background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-    margin: 0;
+    border-radius: 24px;
 }
 
 .applications h2 {
@@ -15,9 +16,9 @@
 }
 
 .applications-grid {
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }
 
 .application-card {
@@ -128,8 +129,8 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .applications {
-        flex-direction: column;
-        padding: 30px 20px;
+        margin: 40px 10px;
+        padding: 40px 20px;
     }
 
     .applications h2 {
@@ -189,9 +190,11 @@
     }
 }/* Applications Section */
 .applications {
-    margin: 0px auto;
+    max-width: 1400px;
+    margin: 60px auto;
     padding: 60px 40px;
     background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-radius: 24px;
 }
 
 .applications h2 {
