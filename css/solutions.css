@@ -1,8 +1,8 @@
 /* Solutions Section */
 .solutions {
-    max-width: 1400px;
-    margin: 60px auto;
-    padding: 60px 40px;
+    width: 100vw;
+    padding: 60px 0;
+    margin: 0;
 }
 
 .solutions h2 {
@@ -14,9 +14,9 @@
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .service-card {
@@ -107,8 +107,8 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .solutions {
-        margin: 40px 10px;
-        padding: 40px 20px;
+        flex-direction: column;
+        padding: 30px 20px;
     }
 
     .solutions h2 {

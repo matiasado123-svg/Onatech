@@ -1,18 +1,16 @@
 /* Footer */
 footer {
+    width: 100vw;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: #fff;
-    padding: 60px 40px 30px;
-    margin-top: 80px;
+    padding: 60px 0 30px;
+    margin: 0;
 }
 
 .footer-container {
     max-width: 1400px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    margin-bottom: 40px;
+    padding: 0 40px;
 }
 
 .footer-contact h4,
@@ -77,7 +75,6 @@ footer {
 /* Mobile Responsive */
 @media (max-width: 1024px) {
     .footer-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        padding: 0 20px;
     }
 }

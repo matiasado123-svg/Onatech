@@ -1,8 +1,8 @@
 /* Contact Section */
 .contact-section {
-    max-width: 1400px;
-    margin: 60px auto;
-    padding: 60px 40px;
+    width: 100vw;
+    padding: 60px 0;
+    margin: 0;
 }
 
 .contact-section h2 {
@@ -14,9 +14,9 @@
 }
 
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
+    width: 100%;
+    padding: 60px 40px;
+    margin: 0;
 }
 
 .contact-info {
@@ -189,8 +189,8 @@ textarea {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .contact-section {
-        margin: 40px 10px;
-        padding: 40px 20px;
+        flex-direction: column;
+        padding: 30px 20px;
     }
 
     .contact-section h2 {

@@ -1,19 +1,21 @@
 /* Hero Header Section */
 header {
     background: linear-gradient(135deg, #0ea5e9 0%, #22d3ee 100%);
-    padding: 30px 40px;
+    padding: 30px 0;
     color: #fff;
-    max-width: 1400px;
-    margin: 20px auto;
-    border-radius: 16px;
     box-shadow: 0 10px 40px rgba(34, 211, 238, 0.3);
     position: relative;
+    width: 100vw; /* Full viewport width */
+    margin: 0;
 }
 
 .header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .header h1 {
@@ -55,13 +57,26 @@ header {
     align-items: center;
     justify-content: center;
     gap: 60px;
-    max-width: 1400px;
-    margin: 60px auto;
-    padding: 40px;
-    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-    border-radius: 24px;
+    width: 100vw; /* Full viewport width */
+    padding: 60px 0; /* Remove horizontal padding */
+    background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    margin: 0;
 }
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
 
 .hero-image {
     width: 45%;
@@ -76,9 +91,8 @@ header {
 }
 
 .hero-content {
-    width: 50%;
-    text-align: left;
-    color: #1c1c1c;
+    z-index: 1;
+    max-width: 600px;
 }
 
 .hero-content h2 {
@@ -189,6 +203,7 @@ header {
         flex-direction: column;
         gap: 16px;
         text-align: center;
+        padding: 0 20px;
     }
 
     .header h1 {
@@ -210,9 +225,7 @@ header {
 
     .hero-section {
         flex-direction: column;
-        text-align: center;
         padding: 30px 20px;
-        margin: 40px 10px;
     }
 
     .hero-image,

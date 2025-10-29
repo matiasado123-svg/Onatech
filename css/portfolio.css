@@ -1,13 +1,14 @@
 /* Portfolio Section */
 .portfolio-section {
+    width: 100vw;
     background: #fff;
     padding: 80px 0;
+    margin: 0;
 }
 
 .portfolio {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 40px;
 }
 
 .portfolio h2 {
@@ -130,7 +131,8 @@
     }
 
     .portfolio {
-        padding: 0 20px;
+        flex-direction: column;
+        padding: 30px 20px;
     }
 
     .portfolio h2 {
