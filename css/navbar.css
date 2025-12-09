@@ -38,6 +38,20 @@
     transform: scale(1.05);
 }
 
+/* Company name next to logo */
+.nav-logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0ea5e9;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover .nav-logo-text {
+    color: #22d3ee;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -135,6 +149,11 @@
     .hamburger {
         display: flex;
     }
+    
+    /* Hide company name on mobile */
+    .nav-logo-text {
+        display: none;
+    }
 
     .nav-menu {
         position: fixed;
@@ -166,5 +185,12 @@
     .nav-menu li a.nav-cta {
         display: inline-block;
         margin-top: 1rem;
+    }
+}
+
+/* Show company name on tablets and larger */
+@media (min-width: 901px) {
+    .nav-logo-text {
+        display: block;
     }
 }

@@ -2,7 +2,7 @@
    ACCESSIBILITY IMPROVEMENTS
    =================================== */
 
-/* Skip to main content link */
+/* Skip to main content link - HIDDEN */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -15,10 +15,17 @@
     z-index: 10000;
     border-radius: 0 0 8px 0;
     transition: top 0.2s ease;
+    /* Keep it hidden even on focus */
+    visibility: hidden;
+    opacity: 0;
 }
 
+/* Remove the focus behavior that shows it */
 .skip-link:focus {
-    top: 0;
+    /* Don't show on focus */
+    top: -40px;
+    visibility: hidden;
+    opacity: 0;
 }
 
 /* Enhanced focus states for keyboard navigation */
