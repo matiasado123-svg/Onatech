@@ -1,6 +1,6 @@
 /* Testimonials Section */
 .testimonials-section {
-    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    background: #f1f5f9;
     padding: 80px 0;
 }
 
@@ -28,14 +28,12 @@
     background: #fff;
     padding: 40px;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
     position: relative;
 }
 
 .testimonial-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial-card::before {

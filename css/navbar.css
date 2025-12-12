@@ -8,7 +8,6 @@
     backdrop-filter: blur(10px);
     padding: 0.75rem 3rem;
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
 .nav-container {
@@ -91,13 +90,12 @@
 }
 
 .nav-menu li a.nav-cta {
-    background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+    background: #22d3ee;
     color: #fff;
     padding: 0.75rem 2rem;
     border-radius: 8px;
     font-weight: 700;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(34, 211, 238, 0.4);
     text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
@@ -109,7 +107,6 @@
 
 .nav-menu li a.nav-cta:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(34, 211, 238, 0.6);
 }
 
 /* Hamburger Menu */
@@ -165,7 +162,6 @@
         width: 100%;
         text-align: center;
         transition: left 0.3s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         padding: 2rem 0;
         gap: 0;
     }
