@@ -2,20 +2,104 @@
 <html lang="nl">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
     <title>Van data naar inzicht: Grafana in de industrie | OnaTech</title>
-    <meta name="description"
-        content="Leer hoe Grafana industriële data omzet in bruikbare inzichten. Praktische voorbeelden en tips voor effectieve dashboards in productieomgevingen.">
+    <meta name="title" content="Van data naar inzicht: Grafana in de industrie | OnaTech">
+    <meta name="description" content="Leer hoe Grafana industriële data omzet in bruikbare inzichten. Praktische voorbeelden en tips voor effectieve dashboards in productieomgevingen. Van OEE monitoring tot energiebeheer.">
+    <meta name="keywords" content="Grafana industrie, data visualisatie, OEE dashboard, energie monitoring, industriële dashboards, InfluxDB, real-time monitoring, productie analytics">
+    <meta name="author" content="OnaTech BV">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://onatech.onatrack.eu/blog/grafana-industrie.html">
+    <meta property="og:title" content="Van data naar inzicht: Grafana in de industrie">
+    <meta property="og:description" content="Leer hoe Grafana industriële data omzet in bruikbare inzichten. Praktische voorbeelden en tips voor effectieve dashboards in productieomgevingen.">
+    <meta property="og:image" content="https://onatech.onatrack.eu/assets/images/data_visualisation.jpg">
+    <meta property="og:locale" content="nl_BE">
+    <meta property="article:published_time" content="2024-12-20T09:00:00+01:00">
+    <meta property="article:author" content="OnaTech BV">
+    <meta property="article:section" content="Data Analytics">
+    <meta property="article:tag" content="Grafana">
+    <meta property="article:tag" content="Data Visualization">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://onatech.onatrack.eu/blog/grafana-industrie.html">
+    <meta name="twitter:title" content="Van data naar inzicht: Grafana in de industrie">
+    <meta name="twitter:description" content="Leer hoe Grafana industriële data omzet in bruikbare inzichten voor productieomgevingen.">
+    <meta name="twitter:image" content="https://onatech.onatrack.eu/assets/images/data_visualisation.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://onatech.onatrack.eu/blog/grafana-industrie.html">
+    
     <link rel="stylesheet" href="../css/style.min.css">
     <link rel="icon" type="image/png" href="../assets/images/Onatech_Logo.png">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Structured Data - Blog Post -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Van data naar inzicht: Grafana in de industrie",
+      "description": "Leer hoe Grafana industriële data omzet in bruikbare inzichten. Praktische voorbeelden en tips voor effectieve dashboards in productieomgevingen.",
+      "image": "https://onatech.onatrack.eu/assets/images/data_visualisation.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "OnaTech BV",
+        "url": "https://onatech.onatrack.eu"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "OnaTech BV",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://onatech.onatrack.eu/assets/images/Onatech_Logo.png"
+        }
+      },
+      "datePublished": "2024-12-20T09:00:00+01:00",
+      "dateModified": "2024-12-20T09:00:00+01:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://onatech.onatrack.eu/blog/grafana-industrie.html"
+      },
+      "keywords": ["Grafana", "data visualisatie", "OEE monitoring", "industriële dashboards"]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://onatech.onatrack.eu/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://onatech.onatrack.eu/#blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Grafana in de industrie",
+        "item": "https://onatech.onatrack.eu/blog/grafana-industrie.html"
+      }]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7V45R50GE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'G-F7V45R50GE'); // Replace with your actual ID
+        gtag('config', 'G-F7V45R50GE');
     </script>
 
 </head>
@@ -43,6 +127,16 @@
         </div>
     </nav>
 
+    <nav aria-label="Breadcrumb" style="max-width: 900px; margin: 100px auto 0; padding: 0 40px;">
+        <ol style="display: flex; gap: 10px; list-style: none; padding: 0; font-size: 0.9rem; color: #64748b;">
+            <li><a href="../index.html" style="color: #0ea5e9; text-decoration: none;">Home</a></li>
+            <li aria-hidden="true">›</li>
+            <li><a href="../index.html#blog" style="color: #0ea5e9; text-decoration: none;">Blog</a></li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page" style="color: #334155;">grafana-industrie</li>
+        </ol>
+    </nav>
+
     <article class="blog-article">
         <a href="../index.html#blog" class="back-link">← Terug naar blog</a>
 
@@ -59,7 +153,7 @@
         </div>
 
         <div class="featured-image">
-            <img src="../assets/images/data_visualisation.jpg" alt="Data analytics dashboard met Grafana">
+            <img src="../assets/images/data_visualisation.jpg" alt="Data analytics dashboard met Grafana" width="900" height="400">
         </div>
 
         <div class="blog-content">
